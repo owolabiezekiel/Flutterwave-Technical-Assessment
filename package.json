@@ -1,0 +1,25 @@
+{
+  "name": "flutterwave-technical-assessment",
+  "version": "1.0.0",
+  "description": "Flutterwave technical assessment for backend developer(intern) position.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "nodejs",
+    "flutterwave",
+    "rest"
+  ],
+  "author": "Owolabi Tobiloba",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }, 
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
