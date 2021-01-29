@@ -3,6 +3,19 @@ const express = require('express')
 const app = express()
 app.use(express.json())
 
+// verify valid JSON
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
+    return res.status(400).json({
+      message: "Invalid JSON payload passed.",
+      status: "error",
+      data: null,
+    });
+  }
+
+  next();
+});
+
 
 // Utility methods used by the POST endpoint to test rule validity
 const isValid = (condition, condition_value, test_condition_value) => {

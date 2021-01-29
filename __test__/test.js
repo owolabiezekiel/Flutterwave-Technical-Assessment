@@ -119,6 +119,29 @@ describe("Testing the Validate-Rule API", () => {
     expect(response.body.data.validation.error).toBe(true)
   });
 
+  // Testing the POST /validate-rule endpoint for failure of contains
+  it("tests the validate rule endpoint and returns an error message for for contains when either values is not a string", async () => {
+		const response = await supertest(app).post('/validate-rule').send({
+      rule: {
+        field: "missions",
+        condition: "contains",
+        condition_value: 3
+      },
+      data: {
+        name: "James Holden",
+        crew: "Rocinante",
+        age: 34,
+        position: "Captain",
+        missions: 5
+      }
+    });
+
+    expect(response.status).toBe(400);
+    expect(response.body.status).toBe('error');
+    expect(response.body.message).toBe('field missions failed validation.');
+    expect(response.body.data.validation.error).toBe(true)
+  });
+
   // Testing the POST /validate-rule endpoint for failure by supplying invalid test conditions
   it("tests the validate rule endpoint and returns an error message for not equality", async () => {
 		const response = await supertest(app).post('/validate-rule').send({
