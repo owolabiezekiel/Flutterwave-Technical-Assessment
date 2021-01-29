@@ -25,6 +25,9 @@ const isValid = (condition, condition_value, test_condition_value) => {
     case conditions.greaterThanOrEqual:
       return test_condition_value >= condition_value
     case conditions.contains:
+      if(typeof condition_value !== "string" || typeof test_condition_value !== "string"){
+        return false
+      }
       return test_condition_value.includes(condition_value);
     default:
       return false;
