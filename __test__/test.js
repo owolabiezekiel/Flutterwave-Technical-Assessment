@@ -119,6 +119,75 @@ describe("Testing the Validate-Rule API", () => {
     expect(response.body.data.validation.error).toBe(true)
   });
 
+  // Testing the POST /validate-rule endpoint for failure
+  it("tests the validate rule endpoint and returns an error message for not supplying field value in rule data", async () => {
+		const response = await supertest(app).post('/validate-rule').send({
+      rule: {
+        condition: "neq",
+        condition_value: 30
+      },
+      data: {
+        name: "James Holden",
+        crew: "Rocinante",
+        age: 34,
+        position: "Captain",
+        missions: 30
+      }
+    });
+
+    expect(response.status).toBe(400);
+    expect(response.body.status).toBe('error');
+    expect(response.body.message).toBe('field is required.');
+    expect(response.body.data).toBe(null);
+  });
+
+  // Testing the POST /validate-rule endpoint for failure
+  it("tests the validate rule endpoint and returns an error message for not supplying condition value in rule data", async () => {
+		const response = await supertest(app).post('/validate-rule').send({
+      rule: {
+        field: "missions",
+        condition_value: 30
+      },
+      data: {
+        name: "James Holden",
+        crew: "Rocinante",
+        age: 34,
+        position: "Captain",
+        missions: 30
+      }
+    });
+
+    expect(response.status).toBe(400);
+    expect(response.body.status).toBe('error');
+    expect(response.body.message).toBe('condition is required.');
+    expect(response.body.data).toBe(null);
+  });
+
+
+  // Testing the POST /validate-rule endpoint for failure
+  it("tests the validate rule endpoint and returns an error message for not supplying condition_value value in rule data", async () => {
+		const response = await supertest(app).post('/validate-rule').send({
+      rule: {
+        field: "missions",
+        condition: "neq"
+      },
+      data: {
+        name: "James Holden",
+        crew: "Rocinante",
+        age: 34,
+        position: "Captain",
+        missions: 30
+      }
+    });
+
+    expect(response.status).toBe(400);
+    expect(response.body.status).toBe('error');
+    expect(response.body.message).toBe('condition_value is required.');
+    expect(response.body.data).toBe(null);
+  });
+
+
+
   // Testing the POST /validate-rule endpoint for failure of contains
   it("tests the validate rule endpoint and returns an error message for for contains when either values is not a string", async () => {
 		const response = await supertest(app).post('/validate-rule').send({
