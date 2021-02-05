@@ -104,6 +104,31 @@ app.post("/validate-rule", async (req, res) => {
     });
   }
 
+
+  if(!rule.field){
+    return res.status(400).json({
+      message: "field is required.",
+      status: "error",
+      data: null,
+    });
+  }
+
+  if(!rule.condition){
+    return res.status(400).json({
+      message: "condition is required.",
+      status: "error",
+      data: null,
+    });
+  }
+
+  if(!rule.condition_value){
+    return res.status(400).json({
+      message: "condition_value is required.",
+      status: "error",
+      data: null,
+    });
+  }
+
   if (!Object.keys(data).includes(rule.field)) {
     return res.status(400).json({
       message: `field ${rule.field} is missing from data.`,

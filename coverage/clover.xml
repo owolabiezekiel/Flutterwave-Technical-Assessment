@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1611914901289" clover="3.2.0">
-  <project timestamp="1611914901289" name="All files">
-    <metrics statements="37" coveredstatements="33" conditionals="30" coveredconditionals="24" methods="4" coveredmethods="3" elements="71" coveredelements="60" complexity="0" loc="37" ncloc="37" packages="1" files="1" classes="1"/>
+<coverage generated="1612533779187" clover="3.2.0">
+  <project timestamp="1612533779187" name="All files">
+    <metrics statements="43" coveredstatements="36" conditionals="36" coveredconditionals="27" methods="4" coveredmethods="3" elements="83" coveredelements="66" complexity="0" loc="43" ncloc="43" packages="1" files="1" classes="1"/>
     <file name="server.js" path="/Users/tobilobaowolabi/Desktop/Flutterwave Technical Assessment/server.js">
-      <metrics statements="37" coveredstatements="33" conditionals="30" coveredconditionals="24" methods="4" coveredmethods="3"/>
+      <metrics statements="43" coveredstatements="36" conditionals="36" coveredconditionals="27" methods="4" coveredmethods="3"/>
       <line num="1" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
@@ -35,12 +35,18 @@
       <line num="88" count="1" type="stmt"/>
       <line num="95" count="8" type="cond" truecount="1" falsecount="1"/>
       <line num="100" count="0" type="stmt"/>
-      <line num="107" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="108" count="1" type="stmt"/>
-      <line num="116" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="117" count="3" type="stmt"/>
-      <line num="131" count="4" type="stmt"/>
-      <line num="147" count="1" type="stmt"/>
+      <line num="108" count="8" type="cond" truecount="1" falsecount="1"/>
+      <line num="109" count="0" type="stmt"/>
+      <line num="116" count="8" type="cond" truecount="1" falsecount="1"/>
+      <line num="117" count="0" type="stmt"/>
+      <line num="124" count="8" type="cond" truecount="1" falsecount="1"/>
+      <line num="125" count="0" type="stmt"/>
+      <line num="132" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="133" count="1" type="stmt"/>
+      <line num="141" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="142" count="3" type="stmt"/>
+      <line num="156" count="4" type="stmt"/>
+      <line num="172" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
